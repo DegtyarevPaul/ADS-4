@@ -14,10 +14,8 @@ int countPairs2(int *arr, int len, int value) {
 int i = 0;
 int j = len - 1;
 int c = 0;
-if (*(arr+j) > value)
-j--;
 for (i = 0; i < len; i++) {
-for (j = len - 1; j > 0; j--) {
+for (j = len - 1; j > i; j--) {
 if (*(arr+i) + *(arr+j) == value)
 c++;
 }
