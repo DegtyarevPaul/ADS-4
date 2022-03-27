@@ -44,11 +44,9 @@ while (value == *(arr + l) + *(arr + i) && l != i) {
 c++;
 l--;
 }
-}
-else if (value > *(arr + mid) + *(arr + i)) {
+} else if (value > *(arr + mid) + *(arr + i)) {
 l = mid + 1;
-}
-else if (value < *(arr + mid) + *(arr + i)) {
+} else if (value < *(arr + mid) + *(arr + i)) {
 h = mid - 1;
 }
 }
