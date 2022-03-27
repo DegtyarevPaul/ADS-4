@@ -26,11 +26,11 @@ return c;
 }
 
 int countPairs3(int *arr, int len, int value) {
-int h = size - 1;
+int h = len - 1;
 int l = 0;
 int mid;
 int c = 0;
-for (int i = 0; i < size; i++) {
+for (int i = 0; i < len; i++) {
 while (l <= h) {
 mid = (l + h) / 2;
 if (value == *(arr + mid) + *(arr + i)) {
@@ -51,7 +51,7 @@ h = mid - 1;
 }
 }
 l = i;
-h = size - 1;
+h = len - 1;
 }
 return c;
 }
