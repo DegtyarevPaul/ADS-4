@@ -26,35 +26,35 @@ return c;
 }
 
 int countPairs3(int *arr, int len, int value) {
-	int h = len - 1;
-	int l = 0;
-	int mid;
-	int c = 0;
-	for (int i = 0; i < len; i++) {
-		l = i + 1;
-		h = len - 1;
-		while (l <= h) {
-			mid = (l + h) / 2;
-			if (value == *(arr + mid) + *(arr + i)) {
-				l = h = mid;
-				l--;
-				while (value == *(arr + h) + *(arr + i)) {
-					c++;
-					h++;
-				}
-				while (value == *(arr + l) + *(arr + i) && l != i) {
-					c++;
-					l--;
-				}
-				break;
-			}
-			else if (value > *(arr + mid) + *(arr + i)) {
-				l = mid + 1;
-			}
-			else if (value < *(arr + mid) + *(arr + i)) {
-				h = mid - 1;
-			}
-		}
-	}
-	return c;
+int h = len - 1;
+int l = 0;
+int mid;
+int c = 0;
+for (int i = 0; i < len; i++) {
+l = i + 1;
+h = len - 1;
+while (l <= h) {
+mid = (l + h) / 2;
+if (value == *(arr + mid) + *(arr + i)) {
+l = h = mid;
+l--;
+while (value == *(arr + h) + *(arr + i)) {
+c++;
+h++;
+}
+while (value == *(arr + l) + *(arr + i) && l != i) {
+c++;
+l--;
+}
+break;
+}
+else if (value > *(arr + mid) + *(arr + i)) {
+l = mid + 1;
+}
+else if (value < *(arr + mid) + *(arr + i)) {
+h = mid - 1;
+}
+}
+}
+return c;
 }
