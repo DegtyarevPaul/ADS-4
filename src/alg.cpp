@@ -29,23 +29,23 @@ int l = i;
 int h = len;
 while (l < h - 1) {
 int mid = (l + h) / 2;
-if (arr [i] + arr [mid] == value) {
+if (arr[i] + arr[mid] == value) {
 c++;
 int j = mid + 1;
-while (arr [i] + arr [j] == value && j < h) {
+while (arr[i] + arr[j] == value && j < h) {
 c++;
 j++;
 }
 j = mid - 1;
-while (arr [i] + arr [j] == value && j > l) {
+while (arr[i] + arr[j] == value && j > l) {
 c++;
 j--;
 }
 break;
 }
-if (arr [i] + arr [mid] < value)
+if (arr[i] + arr[mid] < value)
 l = mid;
-if (arr [i] + arr [mid] > value)
+if (arr[i] + arr[mid] > value)
 h = mid;
 }
 }
