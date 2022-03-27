@@ -29,17 +29,17 @@ int l = 0;
 int mid;
 int c = 0;
 for (int i = 0; i < len; i++) {
-l = i + 1;
-h = len - 1;
+l = i;
+h = len;
 while (l <= h) {
 mid = (l + h) / 2;
 if (value == *(arr + mid) + *(arr + i)) {
-while (value == *(arr + mid) + *(arr + i) && mid <= h) {
+while (value == *(arr + mid) + *(arr + i) && mid < h) {
 c++;
 mid++;
 }
 mid = (l + h) / 2 - 1;
-while (value == *(arr + mid) + *(arr + i) && mid >= l) {
+while (value == *(arr + mid) + *(arr + i) && mid > l) {
 c++;
 mid--;
 }
