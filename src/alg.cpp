@@ -36,7 +36,7 @@ mid = (l + h) / 2;
 if (value == *(arr + mid) + *(arr + i)) {
 l = h = mid;
 l--;
-while (value == *(arr + h) + *(arr + i)) {
+while (value == *(arr + h) + *(arr + i) && h != i) {
 c++;
 h++;
 }
