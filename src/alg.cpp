@@ -24,31 +24,30 @@ return c;
 }
 
 int countPairs3(int* arr, int len, int value) {
-int h = len - 1;
-int l = 0;
-int mid;
 int c = 0;
-for (int i = 0; i < len; i++) {
-l = i;
-h = len;
-while (l <= h) {
-mid = (l + h) / 2;
-if (value == *(arr + mid) + *(arr + i)) {
-while (value == *(arr + mid) + *(arr + i) && mid < h) {
+for (int i = 0; i < len - 1; i++) {
+int l = i;
+int h = len;
+while (l < h - 1) {
+int mid = (l + h) / 2;
+if (*(arr + i) + *(arr + mid) == value) {
 c++;
-mid++;
+int j = mid + 1;
+while (*(arr + i) + *(arr + j) == value && j < h) {
+c++;
+j++;
 }
-mid = (l + h) / 2 - 1;
-while (value == *(arr + mid) + *(arr + i) && mid > l) {
+j = mid - 1;
+while (*(arr + i) + *(arr + j) == value && j > l) {
 c++;
-mid--;
+j--;
 }
 break;
-} else if (value > *(arr + mid) + *(arr + i)) {
-l = mid + 1;
-} else if (value < *(arr + mid) + *(arr + i)) {
-h = mid - 1;
 }
+if (*(arr + i) + *(arr + mid) < value)
+l = mid;
+if (*(arr + i) + *(arr + mid) > value)
+h = mid;
 }
 }
 return c;
