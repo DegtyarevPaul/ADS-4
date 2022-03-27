@@ -47,11 +47,9 @@ c++;
 l--;
 }
 break;
-}
-else if (value > *(arr + mid) + *(arr + i)) {
+} else if (value > *(arr + mid) + *(arr + i)) {
 l = mid + 1;
-}
-else if (value < *(arr + mid) + *(arr + i)) {
+} else if (value < *(arr + mid) + *(arr + i)) {
 h = mid - 1;
 }
 }
